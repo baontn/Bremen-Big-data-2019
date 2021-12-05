@@ -97,7 +97,7 @@ When the model use the test dataset to evaluate, and the accuracy was about 54 p
 The below graph shows the number of predictions per each label.  
 ![image](https://user-images.githubusercontent.com/68081679/144765263-e8a1e2ba-c58e-470d-b236-26f58429e418.png)  
 Most of the labels have less than 150 predictions. However, label 3 have an abnormal number of predictions.  
-The accuracy of the model reached 61.79%, with 1074 correct predictions. 
+The accuracy of the model reached 61.79%, with 1074 out of 1738 correct predictions. 
 
 
 
