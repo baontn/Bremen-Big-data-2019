@@ -61,14 +61,23 @@ The process to create the predict dataset was also similar.
 Since there were some 'fake' labels that the organizer added into the dataset, we have to exclude it from our consideration. I replaced the values of the sensor reading by ones:  
 ![image](https://user-images.githubusercontent.com/68081679/144756076-bd163b74-88e1-4882-a22b-4afed4e31c9b.png)  
 
-
-
+from the file train.csv, I obtained the y values and then one-hot encoded them. Below is the distribute of y values in the train dataset:  
+![image](https://user-images.githubusercontent.com/68081679/144758227-3cedf971-ec79-4a30-9527-d9fea9f9ee0d.png)
 
 ### Data Exploration: 
 
 First, it can be observed from the folder that the size for each file is not constain. I tried to see the distribution of the file size.  
 The function below created a list of file size from all test subjects.  
 ![image](https://user-images.githubusercontent.com/68081679/144754879-d20f5382-1d44-465e-9ca0-210d9216cec7.png)
+Result:  
+![image](https://user-images.githubusercontent.com/68081679/144757627-4805cd92-47ce-4c80-93b3-ed0ef126d289.png)  
+It can be seen that most of the data has the size under 4000. SO I chose 4000 as the default size for the data. If the actual data was shorter than 4000, the empty values would be filled with 0.   
+After that, I tried to see the distribution of the value of the sensors (in this case value from subject number 14):  
+![image](https://user-images.githubusercontent.com/68081679/144757869-ffd007a6-9ff7-4568-9969-23c58e3085d2.png)  
+It is safe to conclude that the values of the sensor reading were normally distributed. For that reason, I used the StandardScaler from Sklearn to scale the data. 
+
+
+
 
 
 
