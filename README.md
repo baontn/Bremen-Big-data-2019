@@ -44,7 +44,7 @@ Each line represents the sensor values measured at a time (sampled at 1000Hz). T
 
 ## Approach
 ### Overall approach
-I will make 3 predictions using 3 models, and then take the prediction results and vote to determine the best prediction.   
+I will build the model from CNN and GRU layers.   
 
 ## Detail plan 
 ### Load the data  
@@ -71,10 +71,36 @@ The function below created a list of file size from all test subjects.
 ![image](https://user-images.githubusercontent.com/68081679/144754879-d20f5382-1d44-465e-9ca0-210d9216cec7.png)
 Result:  
 ![image](https://user-images.githubusercontent.com/68081679/144757627-4805cd92-47ce-4c80-93b3-ed0ef126d289.png)  
-It can be seen that most of the data has the size under 4000. SO I chose 4000 as the default size for the data. If the actual data was shorter than 4000, the empty values would be filled with 0.   
+It can be seen that most of the data had the size under 4000. SO I chose 4000 as the default size for the data. If the actual data was shorter than 4000, the empty values would be filled with 0.   
 After that, I tried to see the distribution of the value of the sensors (in this case value from subject number 14):  
 ![image](https://user-images.githubusercontent.com/68081679/144757869-ffd007a6-9ff7-4568-9969-23c58e3085d2.png)  
 It is safe to conclude that the values of the sensor reading were normally distributed. For that reason, I used the StandardScaler from Sklearn to scale the data. 
+
+### Build the model
+
+I built the model from CNN layers, followed by 1 GRU layer and concluded by a fully connected layer.   
+![image](https://user-images.githubusercontent.com/68081679/144764659-c38bab93-df6b-4181-8542-47e6fcda193b.png)
+Between the CNN layers I used max pooling.  
+![image](https://user-images.githubusercontent.com/68081679/144764687-2dd88341-bba7-4bb9-8944-b9d8955a519b.png)  
+I used decayed learning rate. The initial rate was 0.0085. I then compiled and trained the model with batch size equal 1 and in 13 epochs.  
+![image](https://user-images.githubusercontent.com/68081679/144764758-d95514fd-5b19-4308-9de5-894ac14129c5.png)
+
+ 
+ ## Result
+ 
+![image](https://user-images.githubusercontent.com/68081679/144764837-2e4de8e6-f47f-45b8-9f01-05ef97b68e43.png)
+![image](https://user-images.githubusercontent.com/68081679/144764855-070110dc-a176-45e8-8d6d-2cba9246e814.png)  
+
+The model seemed to be overfitted after the 8th epoch. The validation accuracy reached the peak of about 60 percent after 10 epochs.   
+When the model use the test dataset to evaluate, and the accuracy was about 54 percent. 
+![image](https://user-images.githubusercontent.com/68081679/144765057-13838408-32da-4d14-8776-9e7de41ea16a.png)  
+The below graph shows the number of predictions per each label.  
+![image](https://user-images.githubusercontent.com/68081679/144765263-e8a1e2ba-c58e-470d-b236-26f58429e418.png)  
+Most of the labels have less than 150 predictions. However, label 3 have an abnormal number of predictions.  
+The accuracy of the model reached 61.79%, with 1074 correct predictions. 
+
+
+
 
 
 
