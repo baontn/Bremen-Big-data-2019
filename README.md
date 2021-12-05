@@ -42,5 +42,36 @@ For example, the data files.B look like this (example: Subject02_Aufnahme000.csv
 Each line represents the sensor values measured at a time (sampled at 1000Hz). The columns represent the individual sensors whose position is illustrated by the graphic:  
 ![image](https://user-images.githubusercontent.com/68081679/144753853-0b6c5a08-babe-45cf-8466-aa7b2ee2f02e.png)  
 
+## Approach
+### Overall approach
+I will make 3 predictions using 3 models, and then take the prediction results and vote to determine the best prediction.   
+
+## Detail plan 
+### Load the data  
+The data will be loaded from this github repository:  
+![image](https://user-images.githubusercontent.com/68081679/144754967-ef741b53-20c6-4816-8e17-572d603a2a78.png)  
+After that, I will create an array of zeros, and then append the value of the subject's sensor data to that array. Finally, the array will be added to a list for later transformation. The size of the array was 4000 for file GRU_1 and GRU_2, and that of file GRU_3 was 3000. The reason for this size will be discussed in the next part.  
+![image](https://user-images.githubusercontent.com/68081679/144755261-60747880-9271-4767-b512-30be011f7c03.png)  
+This function will return the train dataset and the scaler. The scaler will be used later for the test dataset. The following function will return the train dataset and the scaler:  
+![image](https://user-images.githubusercontent.com/68081679/144755520-d1fb1d40-b0ed-41a7-a107-65740ddab189.png)  
+Data from subjects '02','03','04','05','06','07','08','09',11,12,13,16 were used to create the training data. Data from subject 17,18,19 were used to make the testing data.  
+The function used to create testing dataset is similar to the one used to create training data.  
+![image](https://user-images.githubusercontent.com/68081679/144755870-31bc0e2c-5592-4089-adc2-3f76786f7fc0.png)  
+The process to create the predict dataset was also similar.  
+Since there were some 'fake' labels that the organizer added into the dataset, we have to exclude it from our consideration. I replaced the values of the sensor reading by ones:  
+![image](https://user-images.githubusercontent.com/68081679/144756076-bd163b74-88e1-4882-a22b-4afed4e31c9b.png)  
+
+
+
+
+### Data Exploration: 
+
+First, it can be observed from the folder that the size for each file is not constain. I tried to see the distribution of the file size.  
+The function below created a list of file size from all test subjects.  
+![image](https://user-images.githubusercontent.com/68081679/144754879-d20f5382-1d44-465e-9ca0-210d9216cec7.png)
+
+
+
+
 
 
