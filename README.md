@@ -50,7 +50,7 @@ I will build the model from CNN and GRU layers.
 ### Load the data  
 The data will be loaded from this github repository:  
 ![image](https://user-images.githubusercontent.com/68081679/144754967-ef741b53-20c6-4816-8e17-572d603a2a78.png)  
-After that, I will create an array of zeros, and then append the value of the subject's sensor data to that array. Finally, the array will be added to a list for later transformation. The size of the array was 4000 for file GRU_1 and GRU_2, and that of file GRU_3 was 3000. The reason for this size will be discussed in the next part.  
+After that, I will create an array of zeros, and then append the value of the subject's sensor data to that array. Finally, the array will be added to a list for later transformation. The size of the array was 4000. The reason for this size will be discussed in the next part.  
 ![image](https://user-images.githubusercontent.com/68081679/144755261-60747880-9271-4767-b512-30be011f7c03.png)  
 This function will return the train dataset and the scaler. The scaler will be used later for the test dataset. The following function will return the train dataset and the scaler:  
 ![image](https://user-images.githubusercontent.com/68081679/144755520-d1fb1d40-b0ed-41a7-a107-65740ddab189.png)  
