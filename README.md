@@ -79,8 +79,8 @@ It is safe to conclude that the values of the sensor reading were normally distr
 ### Build the model
 
 I built the model from CNN layers, followed by 1 GRU layer and concluded by a fully connected layer.   
-![image](https://user-images.githubusercontent.com/68081679/144764659-c38bab93-df6b-4181-8542-47e6fcda193b.png)
-Between the CNN layers I used max pooling.  
+![image](https://user-images.githubusercontent.com/68081679/144764659-c38bab93-df6b-4181-8542-47e6fcda193b.png)  
+Between the CNN layers, pooling layers were added.  
 ![image](https://user-images.githubusercontent.com/68081679/144764687-2dd88341-bba7-4bb9-8944-b9d8955a519b.png)  
 I used decayed learning rate. The initial rate was 0.0085. I then compiled and trained the model with batch size equal 1 and in 13 epochs.  
 ![image](https://user-images.githubusercontent.com/68081679/144764758-d95514fd-5b19-4308-9de5-894ac14129c5.png)
