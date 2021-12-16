@@ -54,7 +54,7 @@ Next, I created an array of zeros and appended the subject's sensor data to that
 ![image](https://user-images.githubusercontent.com/68081679/144755261-60747880-9271-4767-b512-30be011f7c03.png)  
 This function will return the train dataset and the scaler. The scaler will be used later for the test dataset. The following function will return the train dataset and the scaler:  
 ![image](https://user-images.githubusercontent.com/68081679/144755520-d1fb1d40-b0ed-41a7-a107-65740ddab189.png)  
-Data from subjects '02','03','04','05','06','07','08','09',11,12,13,16 were used to create the training data. Data from subject 17,18,19 were used to make the testing data.  
+Data from subjects 02,03,04,05,06,07,08,09,11,12,13,16 were used to create the training data. Data from subject 17,18,19 were used to make the testing data.  
 The function used to create testing dataset is similar to the one used to create training data.  
 ![image](https://user-images.githubusercontent.com/68081679/144755870-31bc0e2c-5592-4089-adc2-3f76786f7fc0.png)  
 The process to create the predict dataset was also similar.  
